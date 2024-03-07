@@ -9,7 +9,9 @@ function Github(){
     //     then((data)=>setData(data))
     // },[])
     return(
-        <div className="text-center m-4 bg-gray-600 text-white text-3xl">Github Followers:{data.followers}
+        <div className="text-center m-4 bg-gray-600 text-white text-3xl">Github Followers:{data.followers}<br/>
+        <h3 >ID:{data.id}</h3>
+        <h3>Login:{data.login}</h3>
         <img src={data.avatar_url} alt="Git Picture" width={100}/>
         </div>
     )
@@ -19,5 +21,5 @@ export default Github;
 
 export const githubInfoLoader = async()=>{
     const resp = await fetch(`https://api.github.com/users/hiteshchoudhary`)
-    return resp.json();
+    return resp.json()
 }
